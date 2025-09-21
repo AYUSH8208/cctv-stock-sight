@@ -5,6 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
+import LiveTracking from "./pages/LiveTracking";
+import Inventory from "./pages/Inventory";
+import CameraFeeds from "./pages/CameraFeeds";
+import Analytics from "./pages/Analytics";
+import Predictions from "./pages/Predictions";
+import Alerts from "./pages/Alerts";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,13 +25,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="tracking" element={<div>Live Tracking - Coming Soon</div>} />
-            <Route path="inventory" element={<div>Inventory - Coming Soon</div>} />
-            <Route path="cameras" element={<div>Camera Feeds - Coming Soon</div>} />
-            <Route path="analytics" element={<div>Analytics - Coming Soon</div>} />
-            <Route path="predictions" element={<div>Predictions - Coming Soon</div>} />
-            <Route path="alerts" element={<div>Alerts - Coming Soon</div>} />
-            <Route path="settings" element={<div>Settings - Coming Soon</div>} />
+            <Route path="tracking" element={<LiveTracking />} />
+            <Route path="inventory" element={<Inventory />} />
+            <Route path="cameras" element={<CameraFeeds />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="predictions" element={<Predictions />} />
+            <Route path="alerts" element={<Alerts />} />
+            <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
